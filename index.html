@@ -15,9 +15,9 @@
 <body>
     <div class="header">
         <div class="container header__container">
-            <div class="logo-wrapper">
+            <a class="logo-wrapper" href="index.html">
                 <img src="assets/images/Logo.svg" alt="Логотип" class="logo header__logo">
-            </div>
+            </a>
             <nav class="nav header__nav">
                 <a href="#" class="nav-item header__nav-item">О нас</a>
                 <a href="#" class="nav-item header__nav-item">Услуги</a>
@@ -46,11 +46,11 @@
                     <div class="dropdowns-block search-form__dropdowns-block">
                         <div class="dropdown">
                             <label class="label-title">прибытие</label>
-                            <input class="input-date" type="date" name="arrival">
+                            <input class="input-field input-field_date" type="date" name="arrival">
                         </div>
                         <div class="dropdown">
                             <label class="label-title">выезд</label>
-                            <input class="input-date" type="date" name="departure">
+                            <input class="input-field input-field_date" type="date" name="departure">
                         </div>
                     </div>
                     <div class="select-block search-form__select-block">
@@ -65,6 +65,66 @@
             <p class="content-text main-page__content-text">Лучшие номера для вашей работы,<br>отдыха и просто вдохновения</p>
         </div>
     </div>
+    <footer class="footer">
+        <div class="footer-top"></div>
+            <div class="container footer-top__container">
+                <div class="logo-block footer__logo-block">
+                    <a class="logo-wrapper footer__logo-wrapper" href="index.html">
+                        <img src="assets/images/Logo.svg" alt="Логотип" class="logo header__logo">
+                    </a>
+                    <span class="logo-description">Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»</span>
+                </div>
+                <nav class="footer__nav">
+                    <div class="nav-items-block footer__nav-items-block">
+                        <span class="nav-item-title footer__nav-item-title">навигация</span>
+                        <a href="#" class="nav-item footer__nav-item">О нас</a>
+                        <a href="#" class="nav-item footer__nav-item">Новости</a>
+                        <a href="#" class="nav-item footer__nav-item">Служба поддержки</a>
+                        <a href="#" class="nav-item footer__nav-item">Услуги</a>
+                    </div>
+                    <div class="nav-items-block footer__nav-items-block">
+                        <span class="nav-item-title footer__nav-item-title">о нас</span>
+                        <a href="#" class="nav-item footer__nav-item">О сервисе</a>
+                        <a href="#" class="nav-item footer__nav-item">Наша команда</a>
+                        <a href="#" class="nav-item footer__nav-item">Вакансии</a>
+                        <a href="#" class="nav-item footer__nav-item">Инвесторы</a>
+                    </div>
+                    <div class="nav-items-block footer__nav-items-block">
+                        <span class="nav-item-title footer__nav-item-title">Служба поддержки</span>
+                        <a href="#" class="nav-item footer__nav-item">Соглашения</a>
+                        <a href="#" class="nav-item footer__nav-item">Сообщества</a>
+                        <a href="#" class="nav-item footer__nav-item">Связь с нами</a>
+                    </div>
+                    <div class="nav-items-block footer__nav-items-block">
+                        <span class="nav-item-title footer__nav-item-title">Подписка</span>
+                        <span class="nav-item footer__nav-item">Получайте специальные предложения и новости сервиса</span>
+                        <form class="subscription-form">
+                            <input class="input-field input-field_subscription" type="email" placeholder="Email">
+                            <button class="button_subscription">
+                                <img class="button-arrow_subscription" src="assets/icons/arrow_forward_purple.svg" alt="">
+                            </button>
+                        </form>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container footer-bottom__container">
+                <span class="copyright">Copyright © 2018 Toxin отель. Все права зачищены.</span>
+                <div class="social-links">
+                    <a class="social-link"><img src="assets/icons/twit.svg" alt=""></a>
+                    <a class="social-link"><img src="assets/icons/fb.svg" alt=""></a>
+                    <a class="social-link"><img src="assets/icons/insta.svg" alt=""></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--<div class="card-wrapper card-wrapper_registration">
+        <div class="card card_registration"></div>
+    </div>
+    <div class="card-wrapper card-wrapper_enter">
+        <div class="card card_enter"></div>
+    </div>-->
     <script src="js/swiper-bundle.min.js"></script>
     <script src="js/main.js"></script>
 </body>

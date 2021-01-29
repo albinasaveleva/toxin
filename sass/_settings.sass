@@ -2,6 +2,9 @@
     box-sizing: border-box
 a
     text-decoration: none
+    cursor: pointer
+    &:hover
+        opacity: 0.5
 body
     margin: 0
 .container
@@ -15,6 +18,12 @@ body
     height: inherit
 .nav-item
     @include text_50
+    &-title
+        @include Heading_3
+button
+    outline: none
+    cursor: pointer
+    opacity: 0.5
 .button
     border-radius: 22px
     padding: 10px 20px
@@ -24,6 +33,7 @@ body
     display: flex
     align-items: center
     justify-content: center
+    cursor: pointer
     &_white
         margin-top: 3px
         margin-right: 23px
@@ -70,9 +80,13 @@ body
     &__button_purple
         width: 100%
         position: relative
+        padding: 15px 18px
     &__button-arrow
         position: absolute
-        right: 15px
+        right: 18px
+        width: 16px
+        height: 16px
+        fill: $White
     &_search
         width: 380px
 .card-title
@@ -90,15 +104,25 @@ body
 .label-title    
     @include Heading_3
     margin-bottom: 5px
-.input-date
-    padding-left: 15px
-    width: 150px
+input
+    cursor: text
+.input-field
+    padding: 0 0 0 15px
     height: 44px
+    width: 320px
     background: $White
     border: 1px solid rgba(31, 32, 65, 0.25)
     border-radius: 4px
     @include text_card
     outline: none
+    &_date
+        width: 150px
+    &:hover
+        border: 1px solid rgba(31, 32, 65, 0.5)
+        color: rgba(31, 32, 65, 0.75)
+    &:focus
+        border: 1px solid rgba(31, 32, 65, 0.5)
+        color: rgba(31, 32, 65, 0.75)
 input[type="date"]::-webkit-calendar-picker-indicator
     background-image: url(../assets/icons/expand_more.svg)
     padding-top: 5px

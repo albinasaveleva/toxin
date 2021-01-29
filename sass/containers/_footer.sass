@@ -1,0 +1,63 @@
+.footer
+    &-top__container
+        padding: 104px 0 100px
+        display: flex
+        justify-content: space-between
+    &-bottom__container
+        padding: 23px 0
+        display: flex
+        justify-content: space-between
+    &__logo-block
+        display: flex
+        flex-direction: column
+        width: 260px
+        align-items: flex-start
+        margin-right: 40px
+    &__logo-wrapper
+        margin-bottom: 20px
+    &__nav
+        display: flex
+        justify-content: space-between
+        align-items: flex-start
+        width: 100%
+    &__nav-items-block
+        display: flex
+        flex-direction: column
+        &:last-child
+            max-width: 260px
+            .footer__nav-item
+                line-height: 24px
+    &__nav-item-title
+        margin-bottom: 20px
+    &__nav-item:not(:last-child)
+        margin-bottom: 20px
+.logo-description
+    margin: 0
+    @include text_75
+.subscription-form
+    width: 260px
+    position: relative
+.input-field_subscription
+    width: inherit
+    padding-right: 44px
+.button_subscription
+    position: absolute
+    top: 1px
+    right: 1px
+    bottom: 1px
+    width: 44px
+    background-color: $White
+    border-radius: 0 4px 4px 0
+    border: none
+    outline: none
+    display: flex
+    align-items: center
+    justify-content: center
+.footer-bottom
+    border-top: 1px solid rgba(31, 32, 65, 0.1)
+.copyright
+    @include text_75
+.social-links
+    display: flex
+.social-link:not(:last-child)
+    margin-right: 20px
