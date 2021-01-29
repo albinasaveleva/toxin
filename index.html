@@ -31,7 +31,40 @@
             </div>
         </div>
     </div>
-
+    <div class="main-page">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide"><img class="swiper-image" src="assets/images/slide-1.png" alt=""></div>
+              <div class="swiper-slide"><img class="swiper-image" src="assets/images/slide-2.png" alt=""></div>
+              <div class="swiper-slide"><img class="swiper-image" src="assets/images/slide-3.png" alt=""></div>
+            </div>
+        </div>
+        <div class="container main-page__container">
+            <div class="card card_search main-page__card_search">
+                <h2 class="card-title">Найдём номера под ваши пожелания</h2>
+                <form class="search-form card__search-form">
+                    <div class="dropdowns-block search-form__dropdowns-block">
+                        <div class="dropdown">
+                            <label class="label-title">прибытие</label>
+                            <input class="input-date" type="date" name="arrival">
+                        </div>
+                        <div class="dropdown">
+                            <label class="label-title">выезд</label>
+                            <input class="input-date" type="date" name="departure">
+                        </div>
+                    </div>
+                    <div class="select-block search-form__select-block">
+                        <label class="label-title">гости</label>
+                        <select class="select-field">
+                            <option >Сколько гостей</option>
+                        </select>
+                    </div>
+                    <div class="button button_purple card__button_purple">подобрать номер<img class="card__button-arrow" src="assets/icons/arrow_forward.svg" alt=""></div>
+                </form>
+            </div>
+            <p class="content-text main-page__content-text">Лучшие номера для вашей работы,<br>отдыха и просто вдохновения</p>
+        </div>
+    </div>
     <script src="js/swiper-bundle.min.js"></script>
     <script src="js/main.js"></script>
 </body>
