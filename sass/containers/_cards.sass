@@ -1,0 +1,417 @@
+.card-wrapper
+    position: fixed
+    right: 0
+    left: 0
+    bottom: 0
+    top: 0
+    backdrop-filter: blur(5px)
+    z-index: 1
+    &_entrance_hidden
+        display: none
+    &_registration_hidden
+        display: none
+.card
+    display: flex
+    flex-direction: column
+    align-items: flex-start
+    width: 380px
+    background: $White
+    border: 1px solid rgba(0, 0, 0, 0.12)
+    box-sizing: border-box
+    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2)
+    border-radius: 4px
+    padding: 40px 30px 30px
+    &__button_purple
+        width: 100%
+        position: relative
+        padding: 15px 18px
+    &__button-arrow
+        position: absolute
+        right: 18px
+        width: 16px
+        height: 16px
+        fill: $White    
+    &_registration
+        position: fixed
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+        z-index: 2  
+    &_entrance
+        position: fixed
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+        z-index: 2  
+    
+    &__button_white
+        margin-right: 3px
+.sex-block
+    &__radio-field
+        opacity: 0
+        width: 20px
+        height: 20px
+        & + .sex-block__radio-label
+            &::before
+                content: ""
+                display: inline-block
+                position: absolute
+                left: -30px
+                width: 20px
+                height: 20px
+                z-index: 1
+                border: 1px solid $Dark_25
+                border-radius: 50%
+        &:checked
+            opacity: 0
+            & + .sex-block__radio-label
+                &::before
+                    box-sizing: border-box
+                    content: ""
+                    display: inline-block
+                    position: absolute
+                    left: -30px
+                    width: 20px
+                    height: 20px
+                    z-index: 1
+                    border: 1px solid $Purple
+                    border-radius: 50%
+                &::after
+                    box-sizing: border-box
+                    content: ""
+                    display: inline-block
+                    position: absolute
+                    left: -26px
+                    top: 4px
+                    width: 12px
+                    height: 12px
+                    z-index: 2
+                    background-color: $Purple
+                    border: 1px solid $Purple
+                    border-radius: 50%
+    &__radio-label
+        position: relative
+        margin-left: 10px
+        &:not(:last-child)
+            margin-right: 20px
+.get-offers-block
+    &__checkbox-field
+        width: 40px
+        height: 20px
+        opacity: 0
+        & + .get-offers-block__checkbox-label
+            &::before
+                box-sizing: border-box
+                content: ""
+                display: inline-block
+                position: absolute
+                left: -50px
+                width: 40px
+                height: 20px
+                z-index: 1
+                border: 1px solid $Dark_25
+                border-radius: 10px
+            &::after
+                box-sizing: border-box
+                content: ""
+                display: inline-block
+                position: absolute
+                left: -46px
+                top: 4px
+                width: 12px
+                height: 12px
+                z-index: 2
+                border-radius: 50%
+                background-color: $Dark_25
+        &:checked   
+            opacity: 0
+            & + .get-offers-block__checkbox-label
+                &::before
+                    box-sizing: border-box
+                    content: ""
+                    display: inline-block
+                    position: absolute
+                    left: -50px
+                    width: 40px
+                    height: 20px
+                    z-index: 1
+                    border: 1px solid $Purple
+                    border-radius: 10px 
+                &::after
+                    box-sizing: border-box
+                    content: ""
+                    display: inline-block
+                    position: absolute
+                    left: -26px
+                    top: 4px
+                    width: 12px
+                    height: 12px
+                    z-index: 2
+                    border-radius: 50%
+                    background-color: $Purple
+    &__checkbox-label
+        position: relative
+.card-title
+    @include Heading_1
+    margin: 0
+    margin-bottom: 20px
+.dropdowns-block
+    &_arrival-departure
+        width: 100%
+        display: flex
+        flex-direction: row
+        justify-content: space-between
+        align-items: center
+        margin-bottom: 20px
+    &_guests
+        display: flex
+        flex-direction: column
+    &_preferences
+        display: flex
+        flex-direction: column
+    &_more-preferences
+
+.dropdown
+    &_arrival-departure
+        display: flex
+        flex-direction: column    
+    &_guests
+        height: 44px
+        width: 100%
+        background: $White
+        border: 1px solid rgba(31, 32, 65, 0.25)
+        border-radius: 4px
+        @include text_card
+        outline: none 
+        position: relative
+        background-image: url(../assets/icons/expand_more.svg)
+        background-repeat: no-repeat
+        background-position: right 15px center
+        &[open]
+            border-radius: 4px 4px 0 0
+            border: 1px solid rgba(31, 32, 65, 0.5)
+            background-image: url(../assets/icons/expand_more_dark.svg)
+            background-repeat: no-repeat
+            background-position: right 15px center
+    &_preferences
+        height: 44px
+        width: 100%
+        background: $White
+        border: 1px solid rgba(31, 32, 65, 0.25)
+        border-radius: 4px
+        @include text_card
+        outline: none 
+        position: relative
+        background-image: url(../assets/icons/expand_more.svg)
+        background-repeat: no-repeat
+        background-position: right 15px top 17px
+        &[open]
+            border-radius: 4px 4px 0 0
+            border: 1px solid rgba(31, 32, 65, 0.5)
+            background-image: url(../assets/icons/expand_more_dark.svg)
+            background-repeat: no-repeat
+            background-position: right 15px top 18px
+    &_more-preferences
+        @include text-card
+        background-image: url(../assets/icons/expand_more.svg)
+        background-repeat: no-repeat
+        background-position: right 15px top 16px
+        &[open]
+            background-image: url(../assets/icons/expand_more_dark.svg)
+            background-repeat: no-repeat
+            background-position: right 15px top 17px
+            
+
+
+.label-title    
+    @include Heading_3
+    margin-bottom: 5px
+.card__block-title
+    @include Heading_3
+    margin-bottom: 5px
+input
+    cursor: text
+.input-field
+    padding: 0 0 0 15px
+    height: 44px
+    width: 320px
+    background: $White
+    border: 1px solid rgba(31, 32, 65, 0.25)
+    border-radius: 4px
+    @include text_card
+    outline: none
+    &_date
+        width: 150px
+    &:hover
+        border: 1px solid rgba(31, 32, 65, 0.5)
+        color: rgba(31, 32, 65, 0.75)
+    &:focus
+        border: 1px solid rgba(31, 32, 65, 0.5)
+        color: rgba(31, 32, 65, 0.75)
+    &:active
+        border: 1px solid rgba(31, 32, 65, 0.5)
+        color: rgba(31, 32, 65, 0.75)
+    &_guests
+        padding: 0 0 0 15px
+        height: 44px
+        width: 100%
+        display: flex
+        align-items: center
+        outline: none
+        &::-webkit-details-marker
+            display: none
+    &_name
+        margin-bottom: 10px
+    &_preferences
+        padding: 0 0 0 15px
+        height: 44px
+        width: 100%
+        display: flex
+        align-items: center
+        outline: none
+        &::-webkit-details-marker
+            display: none
+    &_more-preferences
+        @include Heading_3
+        padding: 0
+        height: 44px
+        width: 100%
+        display: flex
+        align-items: center
+        outline: none
+        &::-webkit-details-marker
+            display: none
+    &:active
+        border: 1px solid rgba(31, 32, 65, 0.5)
+        border-radius: 4px 4px 0 0
+    &_subscription
+        width: inherit
+        padding-right: 44px
+input[type="date"]::-webkit-calendar-picker-indicator
+    background-image: url(../assets/icons/expand_more.svg)
+    padding-top: 5px
+    padding-right: 15px
+    width: 12px
+    height: 8px
+.dropdown-block
+    position: relative
+    width: 320px
+.dropdown-field
+    z-index: 5
+    &_guests
+        position: absolute
+        top: 42px
+        left: -1px
+        right: -1px
+        background: $White
+        border: 1px solid rgba(31, 32, 65, 0.5)
+        box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05)
+        border-radius: 0 0 4px 4px
+        padding: 7px 7px 13px 15px
+    &_preferences
+        position: absolute
+        top: 42px
+        left: -1px
+        right: -1px
+        background: $White
+        border: 1px solid rgba(31, 32, 65, 0.5)
+        box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05)
+        border-radius: 0 0 4px 4px
+        padding: 7px 7px 13px 15px
+    &_more-preferences
+.checkbox-block
+    display: flex
+    align-items: flex-start
+    justify-content: flex-start
+.name-block
+    margin-bottom: 10px
+.dropdown-elem
+    display: flex
+    justify-content: space-between
+    align-items: center
+    &:not(:last-child)
+        margin-bottom: 7px
+    &:last-child
+        margin-bottom: 20px
+    .label-title
+        margin-bottom: 0
+.count
+    @include Heading_3   
+    &-block
+        width: 92px
+        display: flex
+        justify-content: space-between
+        align-items: center  
+
+.bio-block
+    display: flex
+    flex-direction: column
+    align-items: flex-start
+    margin-bottom: 20px
+    .input-field
+        margin-bottom: 10px
+.sex-block
+    margin-bottom: 20px
+.radios-block
+    display: flex
+    justify-content: flex-start
+    align-items: center
+.radio-label
+    @include text_75
+.date-of-birth-block
+    display: flex
+    flex-direction: column
+    margin-bottom: 20px
+.entrance-block
+    display: flex
+    flex-direction: column
+    .input-field:not(:last-child)
+        margin-bottom: 10px
+.get-offers-block
+    display: flex    
+    justify-content: flex-start
+    align-items: center
+.checkbox-label
+    @include text_75
+    margin-left: 10px
+// Формы
+.card-form
+    &_search
+        width: 100%
+        display: flex
+        flex-direction: column
+        align-items: flex-start 
+    &_registration
+        display: flex
+        flex-direction: column
+        align-items: flex-start
+        & .entrance-block
+            margin-bottom: 20px
+    &_entrance
+        display: flex
+        flex-direction: column
+        align-items: flex-start
+.card-content
+    width: 100%
+    display: flex
+    flex-direction: column
+    margin-bottom: 20px
+.card-button
+    width: 100%
+    &_entrance
+        margin-bottom: 30px
+    &_registration
+        margin-bottom: 30px
+.card-footer
+    width: 100%
+    display: flex
+    align-items: center
+    justify-content: space-between
+.card-footer-text
+    @include text-card
+    color: $Dark_100
+.dropdown
+    &__buttons-block
+        display: flex
+        align-items: center
+        justify-content: space-between 

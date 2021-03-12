@@ -1,0 +1,43 @@
+@media screen and ( max-width: 1199px )
+    .container
+        width: 900px
+    .footer
+        &-top__container
+            flex-wrap: wrap
+@media screen and ( max-width: 991px )
+    .container
+        width: 700px
+    .header
+        &__container
+            flex-wrap: wrap
+        &__nav
+            order: 1
+            margin-top: 15px
+            margin-left: auto
+            margin-right: auto
+    .footer
+        &-top__container
+            padding: 50px 0
+        &__block_logo
+            margin-right: 0
+            margin-bottom: 40px
+        &__nav
+            margin-right: 0
+            margin-bottom: 40px
+            max-width: 100%
+        &__subscription-block
+@media screen and ( max-width: 767px )
+    .container
+        width: 520px
+@media screen and ( max-width: 575px )
+    .container
+        width: 440px
+@media screen and ( max-width: 479px )
+    .container
+        width: 320px
+    .footer
+        &__nav
+            flex-direction: column
+            &-item-block:not(:last-child)
+                margin-bottom: 20px
+

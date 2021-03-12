@@ -1,13 +1,14 @@
 .footer
     &-top__container
-        padding: 104px 0 100px
+        padding: 104px 0 109px
         display: flex
         justify-content: space-between
+        align-items: flex-start
     &-bottom__container
         padding: 23px 0
         display: flex
         justify-content: space-between
-    &__logo-block
+    &__block_logo
         display: flex
         flex-direction: column
         width: 260px
@@ -19,27 +20,36 @@
         display: flex
         justify-content: space-between
         align-items: flex-start
+        margin-right: 50px
+        max-width: 500px
         width: 100%
-    &__nav-items-block
+    &__nav-item-block
         display: flex
         flex-direction: column
-        &:last-child
-            max-width: 260px
-            .footer__nav-item
-                line-height: 24px
     &__nav-item-title
         margin-bottom: 20px
     &__nav-item:not(:last-child)
         margin-bottom: 20px
-.logo-description
+.description_logo
     margin: 0
     @include text_75
-.subscription-form
-    width: 260px
-    position: relative
-.input-field_subscription
-    width: inherit
-    padding-right: 44px
+.subscription
+    &-form
+        width: 260px
+        position: relative
+    &-block
+        display: flex
+        flex-direction: column 
+        align-items: flex-start
+        max-width: 260px
+    &-title
+        @include Heading_3
+        margin: 0
+        margin-bottom: 20px
+    &-text
+        @include text_50 
+        line-height: 24px 
+        margin-bottom: 20px
 .button_subscription
     position: absolute
     top: 1px

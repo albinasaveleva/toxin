@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/icons/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <title>TOXIN отель</title>
+</head>
+<body>
+    <header class="header">
+        <div class="container header__container">
+            <a class="logo-wrapper" href="index.html">
+                <img src="assets/images/Logo.svg" alt="Логотип" class="logo header__logo">
+            </a>
+            <nav class="nav header__nav">
+                <ol class="nav-inner header__nav-inner">
+                    <li class="header__nav-item-wrapper nav-item-wrapper"><a href="#" class="nav-item header__nav-item">О нас</a></li>
+                    <li class="header__nav-item-wrapper nav-item-wrapper nav-item-wrapper_submenu">
+                        <details class="header__details">
+                            <summary class="header__summary"><a href="#" class="nav-item header__nav-item">Услуги</a></summary>
+                            <ul class="submenu header__submenu">
+                                <li class="submenu-item-wrapper"><a class="submenu-item" href="#">Услуга 1</a></li>
+                                <li class="submenu-item-wrapper"><a class="submenu-item" href="#">Услуга 2</a></li>
+                            </ul>
+                        </details>
+                    </li>
+                    <li class="header__nav-item-wrapper nav-item-wrapper"><a href="#" class="nav-item header__nav-item">Вакансии</a></li>
+                    <li class="header__nav-item-wrapper nav-item-wrapper"><a href="#" class="nav-item header__nav-item">Новости</a></li>
+                    <li class="header__nav-item-wrapper nav-item-wrapper nav-item-wrapper_submenu">
+                        <details class="header__details">
+                            <summary class="header__summary"><a href="#" class="nav-item header__nav-item header__nav-item_submenu">Соглашения</a></summary>
+                            <ul class="submenu header__submenu">
+                                <li class="submenu-item-wrapper"><a class="submenu-item" href="#">Соглашение 1</a></li>
+                                <li class="submenu-item-wrapper"><a class="submenu-item" href="#">Соглашение 2</a></li>
+                            </ul>
+                        </details>
+                    </li>
+                </ol>
+            </nav>
+            <div class="buttons-block header__buttons-block">
+                <div class="button button_white header__button_white" id="entrance">войти</div>
+                <div class="button button_purple" id="registration">зарегистрироваться</div>
+            </div>
+        </div>
+    </header>
+    <div class="search-room-page">
+        <div class="container search-room-page__container">
+            <aside class="filters">
+                <div class="filter">
+                    <span class="filter-title">даты пребывания в отеле</span>
+                </div>
+                <div class="filter">
+                    <span class="filter-title">гости</span>
+                    <div class="dropdowns-block_guests">
+                        <details class="dropdown_guests">
+                            <summary class="input-field_guests">Сколько гостей</summary>
+                            <div class="dropdown-field dropdown-field_guests">
+                                <div class="dropdown-elem">
+                                    <span class="label-title">взрослые</span>
+                                    <div class="count-block">
+                                        <button type="button" class="button_minus">-</button>
+                                        <span class="count">0</span>
+                                        <button type="button" class="button_plus">+</button>
+                                    </div>
+                                </div>
+                                <div class="dropdown-elem">
+                                    <span class="label-title">дети</span>
+                                    <div class="count-block">
+                                        <button type="button" class="button_minus">-</button>
+                                        <span class="count">0</span>
+                                        <button type="button" class="button_plus">+</button>
+                                    </div>
+                                </div>
+                                <div class="dropdown-elem">
+                                    <span class="label-title">младенцы</span>
+                                    <div class="count-block">
+                                        <button type="button" class="button_minus">-</button>
+                                        <span class="count">0</span>
+                                        <button type="button" class="button_plus">+</button>
+                                    </div>
+                                </div>
+                                <div class="buttons-block dropdown__buttons-block">
+                                    <div class="button button_without-border_grey button_without-border">очистить</div>
+                                    <div class="button button_without-border_purple button_without-border">применить</div>
+                                </div>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <div class="filter">
+                    <form class="filter-form">
+                        <div class="range-block">
+                            <label for="amount" class="range-label">диапазон цены</label>
+                            <input type="text" id="amount" readonly class="range-input">
+                        </div>
+                        <div id="slider-range"></div>
+                    </form>
+                    <div class="filter-footer">
+                        <span class="filter-footer-text">Стоимость за сутки пребывания в номере</span>
+                    </div>
+                </div>
+                <div class="filter">
+                    <span class="filter-title">фильтры</span>
+                    <form class="filter-form filter-form_filters">
+                        <div class="filter-block">
+                            <div class="checkbox-block">
+                                <input type="checkbox" class="checkbox-field filter__checkbox-field" id="filter-1">
+                                <label for="filter-1" class="checkbox-label filter__checkbox-label">Можно курить</label> 
+                            </div>
+                        </div>
+                       <div class="filter-block">
+                            <div class="checkbox-block">
+                                <input type="checkbox" class="checkbox-field filter__checkbox-field" id="filter-2" checked>
+                                <label for="filter-2" class="checkbox-label filter__checkbox-label">Можно с питомцами</label> 
+                            </div>
+                       </div>
+                       <div class="filter-block">
+                            <div class="checkbox-block">
+                                <input type="checkbox" class="checkbox-field filter__checkbox-field" id="filter-3">
+                                <label for="filter-3" class="checkbox-label filter__checkbox-label">Можно пригласить гостей <br>(до 10 человек)</label> 
+                            </div>
+                       </div>
+                    </form>
+                </div>
+                <div class="filter">
+                    <span class="filter-title">доступность</span>
+                    <form class="filter-form filter-form_availability">
+                        <div class="filter-block-wrapper filter__filter-block-wrapper">
+                            <div class="filter-block">
+                                <div class="checkbox-block">
+                                    <input type="checkbox" class="checkbox-field filter__checkbox-field" id="availability-1">
+                                    <label for="availability-1" class="checkbox-label filter__checkbox-label filter__checkbox-label_bold">Широкий коридор</label> 
+                                </div>
+                            </div>
+                            <span class="checkbox-label-description filter__checkbox-label-description">
+                                Ширина коридоров в номере не менее 91 см.
+                            </span>
+                        </div>
+                        <div class="filter-block-wrapper filter__filter-block-wrapper">
+                            <div class="filter-block">
+                                <div class="checkbox-block">
+                                    <input type="checkbox" class="checkbox-field filter__checkbox-field" id="availability-2">
+                                    <label for="availability-2" class="checkbox-label filter__checkbox-label filter__checkbox-label_bold">Помощник для инвалидов</label>
+                                </div>
+                           </div>
+                           <span class="checkbox-label-description filter__checkbox-label-description">
+                            На 1 этаже вас встретит специалист  и проводит до номера.
+                            </span>
+                        </div>
+                    </form>
+                </div>
+                <div class="filter">
+                    <span class="filter-title">удобства номера</span>
+                    <div class="dropdowns-block_preferences">
+                        <details class="dropdown_preferences">
+                            <summary class="input-field_preferences">Какие удобства</summary>
+                            <div class="dropdown-field dropdown-field_preferences">
+                                <div class="dropdown-elem">
+                                    <span class="label-title">спальни</span>
+                                    <div class="count-block">
+                                        <button type="button" class="button_minus">-</button>
+                                        <span class="count">2</span>
+                                        <button type="button" class="button_plus">+</button>
+                                    </div>
+                                </div>
+                                <div class="dropdown-elem">
+                                    <span class="label-title">кровати</span>
+                                    <div class="count-block">
+                                        <button type="button" class="button_minus">-</button>
+                                        <span class="count">1</span>
+                                        <button type="button" class="button_plus">+</button>
+                                    </div>
+                                </div>
+                                <div class="dropdown-elem">
+                                    <span class="label-title">ванные комнаты</span>
+                                    <div class="count-block">
+                                        <button type="button" class="button_minus">-</button>
+                                        <span class="count">0</span>
+                                        <button type="button" class="button_plus">+</button>
+                                    </div>
+                                </div>
+                                <div class="buttons-block dropdown__buttons-block">
+                                    <div class="button button_without-border_grey button_without-border">очистить</div>
+                                    <div class="button button_without-border_purple button_without-border">применить</div>
+                                </div>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <div class="filter">
+                    <div class="dropdowns-block_more-preferences">
+                        <details class="dropdown_more-preferences">
+                            <summary class="input-field_more-preferences">дополнительные удобства</summary>
+                            <div class="dropdown-field dropdown-field_more-preferences">
+                                <div class="filter-block">
+                                    <div class="checkbox-block">
+                                        <input id="more-preferences-1" type="checkbox" class="checkbox-field filter__checkbox-field">
+                                        <label for="more-preferences-1" class="checkbox-label filter__checkbox-label">Завтрак</label>
+                                    </div>
+                                </div>
+                                <div class="filter-block">
+                                    <div class="checkbox-block">
+                                        <input id="more-preferences-2" type="checkbox" class="checkbox-field filter__checkbox-field">
+                                        <label for="more-preferences-2" class="checkbox-label filter__checkbox-label">Письменный стол</label>
+                                    </div>
+                                </div>
+                                <div class="filter-block">
+                                    <div class="checkbox-block">
+                                        <input id="more-preferences-3" type="checkbox" class="checkbox-field filter__checkbox-field">
+                                        <label for="more-preferences-3" class="checkbox-label filter__checkbox-label">Стул для кормления</label>
+                                    </div>
+                                </div>
+                                <div class="filter-block">
+                                    <div class="checkbox-block">
+                                        <input id="more-preferences-4" type="checkbox" class="checkbox-field filter__checkbox-field">
+                                        <label for="more-preferences-4" class="checkbox-label filter__checkbox-label">Кроватка</label>
+                                    </div>
+                                </div>
+                                <div class="filter-block">
+                                    <div class="checkbox-block">
+                                        <input id="more-preferences-5" type="checkbox" class="checkbox-field filter__checkbox-field">
+                                        <label for="more-preferences-5" class="checkbox-label filter__checkbox-label">Телевизор</label>
+                                    </div>
+                                </div>
+                                <div class="filter-block">
+                                    <div class="checkbox-block">
+                                        <input id="more-preferences-6" type="checkbox" class="checkbox-field filter__checkbox-field">
+                                        <label for="more-preferences-6" class="checkbox-label filter__checkbox-label">Шампунь</label>
+                                    </div>
+                                </div>
+                                <div class="filter-block">
+                                    <div class="checkbox-block">
+                                        <input id="more-preferences-7" type="checkbox" class="checkbox-field filter__checkbox-field">
+                                        <label for="more-preferences-7" class="checkbox-label filter__checkbox-label">Телевизор</label>
+                                    </div>
+                                </div>
+                                <div class="filter-block">
+                                    <div class="checkbox-block">
+                                        <input id="more-preferences-8" type="checkbox" class="checkbox-field filter__checkbox-field">
+                                        <label for="more-preferences-8" class="checkbox-label filter__checkbox-label">Шампунь</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </details>
+                    </div>
+                </div>                
+            </aside>
+            <main class="rooms search-room-page__rooms">
+                <h2 class="rooms-title">Номера, которые мы для вас подобрали</h2>
+                <div class="rooms-content">
+                    <div class="room">
+                        <div class="room-image">
+                            <div class="swiper-container room__swiper-container">
+                                <div class="swiper-wrapper room__swiper-wrapper">
+                                  <div class="swiper-slide room__swiper-slide"><img class="room__swiper-image" src="assets/images/room-1.png"></div>
+                                  <div class="swiper-slide room__swiper-slide"><img class="room__swiper-image" src="assets/images/room-1.png"></div>
+                                  <div class="swiper-slide room__swiper-slide"><img class="room__swiper-image" src="assets/images/room-1.png"></div>
+                                  <div class="swiper-slide room__swiper-slide"><img class="room__swiper-image" src="assets/images/room-1.png"></div>
+                                </div>
+                                <div class="swiper-pagination room__swiper-pagination"></div>
+                                <div class="room__swiper-button-prev"></div>
+                                <div class="room__swiper-button-next"></div>
+                              </div>
+                        </div>
+                        <div class="room-description">
+                            <div class="room-description-top">
+                                <div class="room-number"><span class="room-number-text">№</span>&nbsp;1235</div>
+                                <div class="room-cost">1234&nbsp;<span class="room-cost-text">в сутки</span></div>
+                            </div>
+                            <hr class="room-divider">
+                            <div class="room-description-bottom">
+                                <div class="room-rating"></div>
+                                <div class="room-reviews">1234&nbsp;<span class="room-reviews-text">Отзывов</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="room">
+                        <div class="room-image">
+                            <div class="swiper-container room__swiper-container">
+                                <div class="swiper-wrapper room__swiper-wrapper">
+                                  <div class="swiper-slide room__swiper-slide"><img class="room__swiper-image" src="assets/images/room-2.png"></div>
+                                  <div class="swiper-slide room__swiper-slide"><img class="room__swiper-image" src="assets/images/room-2.png"></div>
+                                  <div class="swiper-slide room__swiper-slide"><img class="room__swiper-image" src="assets/images/room-2.png"></div>
+                                  <div class="swiper-slide room__swiper-slide"><img class="room__swiper-image" src="assets/images/room-2.png"></div>
+                                </div>
+                                <div class="swiper-pagination room__swiper-pagination"></div>
+                                <div class="room__swiper-button-prev"></div>
+                                <div class="room__swiper-button-next"></div>
+                              </div>
+                        </div>
+                        <div class="room-description">
+                            <div class="room-description-top">
+                                <div class="room-number"><span class="room-number-text">№</span>&nbsp;1235</div>
+                                <div class="room-cost">1234&nbsp;<span class="room-cost-text">в сутки</span></div>
+                            </div>
+                            <hr class="room-divider">
+                            <div class="room-description-bottom">
+                                <div class="room-rating"></div>
+                                <div class="room-reviews">1234&nbsp;<span class="room-reviews-text">Отзывов</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="room">
+                        <div class="room-image">
+                            <div class="swiper-container room__swiper-container">
+                                <div class="swiper-wrapper room__swiper-wrapper">
+                                  <div class="swiper-slide room__swiper-slide"><img class="room__swiper-image" src="assets/images/room-3.png"></div>
+                                  <div class="swiper-slide room__swiper-slide"><img class="room__swiper-image" src="assets/images/room-3.png"></div>
+                                  <div class="swiper-slide room__swiper-slide"><img class="room__swiper-image" src="assets/images/room-3.png"></div>
+                                  <div class="swiper-slide room__swiper-slide"><img class="room__swiper-image" src="assets/images/room-3.png"></div>
+                                </div>
+                                <div class="swiper-pagination room__swiper-pagination"></div>
+                                <div class="room__swiper-button-prev"></div>
+                                <div class="room__swiper-button-next"></div>
+                              </div>
+                        </div>
+                        <div class="room-description">
+                            <div class="room-description-top">
+                                <div class="room-number"><span class="room-number-text">№</span>&nbsp;1235</div>
+                                <div class="room-cost">1234&nbsp;<span class="room-cost-text">в сутки</span></div>
+                            </div>
+                            <hr class="room-divider">
+                            <div class="room-description-bottom">
+                                <div class="room-rating"></div>
+                                <div class="room-reviews">1234&nbsp;<span class="room-reviews-text">Отзывов</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="room">
+                        <div class="room-image">
+                            <div class="swiper-container room__swiper-container">
+                                <div class="swiper-wrapper room__swiper-wrapper">
+                                  <div class="swiper-slide room__swiper-slide"><img class="room__swiper-image" src="assets/images/room-4.png"></div>
+                                  <div class="swiper-slide room__swiper-slide"><img class="room__swiper-image" src="assets/images/room-4.png"></div>
+                                  <div class="swiper-slide room__swiper-slide"><img class="room__swiper-image" src="assets/images/room-4.png"></div>
+                                  <div class="swiper-slide room__swiper-slide"><img class="room__swiper-image" src="assets/images/room-4.png"></div>
+                                </div>
+                                <div class="swiper-pagination room__swiper-pagination"></div>
+                                <div class="room__swiper-button-prev"></div>
+                                <div class="room__swiper-button-next"></div>
+                              </div>
+                        </div>
+                        <div class="room-description">
+                            <div class="room-description-top">
+                                <div class="room-number"><span class="room-number-text">№</span>&nbsp;1235</div>
+                                <div class="room-cost">1234&nbsp;<span class="room-cost-text">в сутки</span></div>
+                            </div>
+                            <hr class="room-divider">
+                            <div class="room-description-bottom">
+                                <div class="room-rating"></div>
+                                <div class="room-reviews">1234&nbsp;<span class="room-reviews-text">Отзывов</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="room">
+                        <div class="room-image">
+                            <div class="swiper-container room__swiper-container">
+                                <div class="swiper-wrapper room__swiper-wrapper">
+                                  <div class="swiper-slide room__swiper-slide"><img class="room__swiper-image" src="assets/images/room-5.png"></div>
+                                  <div class="swiper-slide room__swiper-slide"><img class="room__swiper-image" src="assets/images/room-5.png"></div>
+                                  <div class="swiper-slide room__swiper-slide"><img class="room__swiper-image" src="assets/images/room-5.png"></div>
+                                  <div class="swiper-slide room__swiper-slide"><img class="room__swiper-image" src="assets/images/room-5.png"></div>
+                                </div>
+                                <div class="swiper-pagination room__swiper-pagination"></div>
+                                <div class="room__swiper-button-prev"></div>
+                                <div class="room__swiper-button-next"></div>
+                              </div>
+                        </div>
+                        <div class="room-description">
+                            <div class="room-description-top">
+                                <div class="room-number"><span class="room-number-text">№</span>&nbsp;1235</div>
+                                <div class="room-cost">1234&nbsp;<span class="room-cost-text">в сутки</span></div>
+                            </div>
+                            <hr class="room-divider">
+                            <div class="room-description-bottom">
+                                <div class="room-rating"></div>
+                                <div class="room-reviews">1234&nbsp;<span class="room-reviews-text">Отзывов</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="room">
+                        <div class="room-image">
+                            <div class="swiper-container room__swiper-container">
+                                <div class="swiper-wrapper room__swiper-wrapper">
+                                  <div class="swiper-slide room__swiper-slide"><img class="room__swiper-image" src="assets/images/room-6.png"></div>
+                                  <div class="swiper-slide room__swiper-slide"><img class="room__swiper-image" src="assets/images/room-6.png"></div>
+                                  <div class="swiper-slide room__swiper-slide"><img class="room__swiper-image" src="assets/images/room-6.png"></div>
+                                  <div class="swiper-slide room__swiper-slide"><img class="room__swiper-image" src="assets/images/room-6.png"></div>
+                                </div>
+                                <div class="swiper-pagination room__swiper-pagination"></div>
+                                <div class="room__swiper-button-prev"></div>
+                                <div class="room__swiper-button-next"></div>
+                              </div>
+                        </div>
+                        <div class="room-description">
+                            <div class="room-description-top">
+                                <div class="room-number"><span class="room-number-text">№</span>&nbsp;1235</div>
+                                <div class="room-cost">1234&nbsp;<span class="room-cost-text">в сутки</span></div>
+                            </div>
+                            <hr class="room-divider">
+                            <div class="room-description-bottom">
+                                <div class="room-rating"></div>
+                                <div class="room-reviews">1234&nbsp;<span class="room-reviews-text">Отзывов</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="room">
+                        <div class="room-image">
+                            <div class="swiper-container room__swiper-container">
+                                <div class="swiper-wrapper room__swiper-wrapper">
+                                  <div class="swiper-slide room__swiper-slide"><img class="room__swiper-image" src="assets/images/room-7.png"></div>
+                                  <div class="swiper-slide room__swiper-slide"><img class="room__swiper-image" src="assets/images/room-7.png"></div>
+                                  <div class="swiper-slide room__swiper-slide"><img class="room__swiper-image" src="assets/images/room-7.png"></div>
+                                  <div class="swiper-slide room__swiper-slide"><img class="room__swiper-image" src="assets/images/room-7.png"></div>
+                                </div>
+                                <div class="swiper-pagination room__swiper-pagination"></div>
+                                <div class="room__swiper-button-prev"></div>
+                                <div class="room__swiper-button-next"></div>
+                              </div>
+                        </div>
+                        <div class="room-description">
+                            <div class="room-description-top">
+                                <div class="room-number"><span class="room-number-text">№</span>&nbsp;1235</div>
+                                <div class="room-cost">1234&nbsp;<span class="room-cost-text">в сутки</span></div>
+                            </div>
+                            <hr class="room-divider">
+                            <div class="room-description-bottom">
+                                <div class="room-rating"></div>
+                                <div class="room-reviews">1234&nbsp;<span class="room-reviews-text">Отзывов</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="room">
+                        <div class="room-image">
+                            <div class="swiper-container room__swiper-container">
+                                <div class="swiper-wrapper room__swiper-wrapper">
+                                  <div class="swiper-slide room__swiper-slide"><img class="room__swiper-image" src="assets/images/room-8.png"></div>
+                                  <div class="swiper-slide room__swiper-slide"><img class="room__swiper-image" src="assets/images/room-8.png"></div>
+                                  <div class="swiper-slide room__swiper-slide"><img class="room__swiper-image" src="assets/images/room-8.png"></div>
+                                  <div class="swiper-slide room__swiper-slide"><img class="room__swiper-image" src="assets/images/room-8.png"></div>
+                                </div>
+                                <div class="swiper-pagination room__swiper-pagination"></div>
+                                <div class="room__swiper-button-prev"></div>
+                                <div class="room__swiper-button-next"></div>
+                              </div>
+                        </div>
+                        <div class="room-description">
+                            <div class="room-description-top">
+                                <div class="room-number"><span class="room-number-text">№</span>&nbsp;1235</div>
+                                <div class="room-cost">1234&nbsp;<span class="room-cost-text">в сутки</span></div>
+                            </div>
+                            <hr class="room-divider">
+                            <div class="room-description-bottom">
+                                <div class="room-rating"></div>
+                                <div class="room-reviews">1234&nbsp;<span class="room-reviews-text">Отзывов</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="room">
+                        <div class="room-image">
+                            <div class="swiper-container room__swiper-container">
+                                <div class="swiper-wrapper room__swiper-wrapper">
+                                  <div class="swiper-slide room__swiper-slide"><img class="room__swiper-image" src="assets/images/room-9.png"></div>
+                                  <div class="swiper-slide room__swiper-slide"><img class="room__swiper-image" src="assets/images/room-9.png"></div>
+                                  <div class="swiper-slide room__swiper-slide"><img class="room__swiper-image" src="assets/images/room-9.png"></div>
+                                  <div class="swiper-slide room__swiper-slide"><img class="room__swiper-image" src="assets/images/room-9.png"></div>
+                                </div>
+                                <div class="swiper-pagination room__swiper-pagination"></div>
+                                <div class="room__swiper-button-prev"></div>
+                                <div class="room__swiper-button-next"></div>
+                              </div>
+                        </div>
+                        <div class="room-description">
+                            <div class="room-description-top">
+                                <div class="room-number"><span class="room-number-text">№</span>&nbsp;1235</div>
+                                <div class="room-cost">1234&nbsp;<span class="room-cost-text">в сутки</span></div>
+                            </div>
+                            <hr class="room-divider">
+                            <div class="room-description-bottom">
+                                <div class="room-rating"></div>
+                                <div class="room-reviews">1234&nbsp;<span class="room-reviews-text">Отзывов</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="room">
+                        <div class="room-image">
+                            <div class="swiper-container room__swiper-container">
+                                <div class="swiper-wrapper room__swiper-wrapper">
+                                  <div class="swiper-slide room__swiper-slide"><img class="room__swiper-image" src="assets/images/room-10.png"></div>
+                                  <div class="swiper-slide room__swiper-slide"><img class="room__swiper-image" src="assets/images/room-10.png"></div>
+                                  <div class="swiper-slide room__swiper-slide"><img class="room__swiper-image" src="assets/images/room-10.png"></div>
+                                  <div class="swiper-slide room__swiper-slide"><img class="room__swiper-image" src="assets/images/room-10.png"></div>
+                                </div>
+                                <div class="swiper-pagination room__swiper-pagination"></div>
+                                <div class="room__swiper-button-prev"></div>
+                                <div class="room__swiper-button-next"></div>
+                              </div>
+                        </div>
+                        <div class="room-description">
+                            <div class="room-description-top">
+                                <div class="room-number"><span class="room-number-text">№</span>&nbsp;1235</div>
+                                <div class="room-cost">1234&nbsp;<span class="room-cost-text">в сутки</span></div>
+                            </div>
+                            <hr class="room-divider">
+                            <div class="room-description-bottom">
+                                <div class="room-rating"></div>
+                                <div class="room-reviews">1234&nbsp;<span class="room-reviews-text">Отзывов</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="room">
+                        <div class="room-image">
+                            <div class="swiper-container room__swiper-container">
+                                <div class="swiper-wrapper room__swiper-wrapper">
+                                  <div class="swiper-slide room__swiper-slide"><img class="room__swiper-image" src="assets/images/room-11.png"></div>
+                                  <div class="swiper-slide room__swiper-slide"><img class="room__swiper-image" src="assets/images/room-11.png"></div>
+                                  <div class="swiper-slide room__swiper-slide"><img class="room__swiper-image" src="assets/images/room-11.png"></div>
+                                  <div class="swiper-slide room__swiper-slide"><img class="room__swiper-image" src="assets/images/room-11.png"></div>
+                                </div>
+                                <div class="swiper-pagination room__swiper-pagination"></div>
+                                <div class="room__swiper-button-prev"></div>
+                                <div class="room__swiper-button-next"></div>
+                              </div>
+                        </div>
+                        <div class="room-description">
+                            <div class="room-description-top">
+                                <div class="room-number"><span class="room-number-text">№</span>&nbsp;1235</div>
+                                <div class="room-cost">1234&nbsp;<span class="room-cost-text">в сутки</span></div>
+                            </div>
+                            <hr class="room-divider">
+                            <div class="room-description-bottom">
+                                <div class="room-rating"></div>
+                                <div class="room-reviews">1234&nbsp;<span class="room-reviews-text">Отзывов</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="room">
+                        <div class="room-image">
+                            <div class="swiper-container room__swiper-container">
+                                <div class="swiper-wrapper room__swiper-wrapper">
+                                  <div class="swiper-slide room__swiper-slide"><img class="room__swiper-image" src="assets/images/room-12.png"></div>
+                                  <div class="swiper-slide room__swiper-slide"><img class="room__swiper-image" src="assets/images/room-12.png"></div>
+                                  <div class="swiper-slide room__swiper-slide"><img class="room__swiper-image" src="assets/images/room-12.png"></div>
+                                  <div class="swiper-slide room__swiper-slide"><img class="room__swiper-image" src="assets/images/room-12.png"></div>
+                                </div>
+                                <div class="swiper-pagination room__swiper-pagination"></div>
+                                <div class="room__swiper-button-prev"></div>
+                                <div class="room__swiper-button-next"></div>
+                              </div>
+                        </div>
+                        <div class="room-description">
+                            <div class="room-description-top">
+                                <div class="room-number"><span class="room-number-text">№</span>&nbsp;1235</div>
+                                <div class="room-cost">1234&nbsp;<span class="room-cost-text">в сутки</span></div>
+                            </div>
+                            <hr class="room-divider">
+                            <div class="room-description-bottom">
+                                <div class="room-rating"></div>
+                                <div class="room-reviews">1234&nbsp;<span class="room-reviews-text">Отзывов</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="container footer-top__container">
+                <div class="block_logo footer__block_logo">
+                    <a class="logo-wrapper footer__logo-wrapper" href="index.html">
+                        <img src="assets/images/Logo.svg" alt="Логотип" class="logo header__logo">
+                    </a>
+                    <span class="description_logo">Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»</span>
+                </div>
+                <nav class="footer__nav">
+                    <div class="nav-item-block footer__nav-item-block">
+                        <span class="nav-item-title footer__nav-item-title">навигация</span>
+                        <a href="#" class="nav-item footer__nav-item">О нас</a>
+                        <a href="#" class="nav-item footer__nav-item">Новости</a>
+                        <a href="#" class="nav-item footer__nav-item">Служба поддержки</a>
+                        <a href="#" class="nav-item footer__nav-item">Услуги</a>
+                    </div>
+                    <div class="nav-item-block footer__nav-item-block">
+                        <span class="nav-item-title footer__nav-item-title">о нас</span>
+                        <a href="#" class="nav-item footer__nav-item">О сервисе</a>
+                        <a href="#" class="nav-item footer__nav-item">Наша команда</a>
+                        <a href="#" class="nav-item footer__nav-item">Вакансии</a>
+                        <a href="#" class="nav-item footer__nav-item">Инвесторы</a>
+                    </div>
+                    <div class="nav-item-block footer__nav-item-block">
+                        <span class="nav-item-title footer__nav-item-title">Служба поддержки</span>
+                        <a href="#" class="nav-item footer__nav-item">Соглашения</a>
+                        <a href="#" class="nav-item footer__nav-item">Сообщества</a>
+                        <a href="#" class="nav-item footer__nav-item">Связь с нами</a>
+                    </div>
+                </nav>
+                <div class="subscription-block footer__subscription-block">
+                    <span class="subscription-title">Подписка</span>
+                    <span class="subscription-text">Получайте специальные предложения и новости сервиса</span>
+                    <form class="subscription-form">
+                        <input class="input-field input-field_subscription" type="email" placeholder="Email">
+                        <button class="button_subscription">
+                            <img class="button-arrow_subscription" src="assets/icons/arrow_forward_purple.svg" alt="">
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container footer-bottom__container">
+                <span class="copyright">Copyright © 2021 С.А.</span>
+                <div class="social-links">
+                    <a class="social-link"><img src="assets/icons/twit.svg" alt=""></a>
+                    <a class="social-link"><img src="assets/icons/fb.svg" alt=""></a>
+                    <a class="social-link"><img src="assets/icons/insta.svg" alt=""></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="card-wrapper card-wrapper_registration card-wrapper_registration_hidden">
+        <div class="card card_registration">
+            <h2 class="card-title">Регистрация аккаунта</h2>
+            <form class="card-form_registration card-form_registration">
+                <div class="card-content">
+                    <div class="name-block">
+                        <input class="input-field input-field_name" type="text" placeholder="Имя">
+                        <input class="input-field input-field_surname" type="text" placeholder="Фамилия">
+                    </div>
+                    <div class="sex-block">
+                        <div class="radios-block">
+                            <input id="male" type="radio" name="sex" class="radio-field sex-block__radio-field">
+                            <label for="male" class="radio-label sex-block__radio-label">Мужчина</label>
+                            <input id="female" type="radio" name="sex" class="radio-field sex-block__radio-field">
+                            <label for="female" class="radio-label sex-block__radio-label">Женщина</label>
+                        </div>
+                    </div>
+                    <div class="date-of-birth-block">
+                        <span class="card__block-title">дата рождения</span>
+                        <input class="input-field input-field_date-of-birth" type="date"  placeholder="ДД.ММ.ГГГГ">
+                    </div>
+                    <div class="entrance-block">
+                        <span class="card__block-title">данные для входа в сервис</span>
+                        <input class="input-field" type="email" placeholder="Email">
+                        <input class="input-field" type="password" placeholder="Пароль">
+                    </div>
+                    <div class="get-offers-block">
+                        <input id="get-offers" type="checkbox" class="checkbox-field get-offers-block__checkbox-field" checked>
+                        <label for="get-offers" class="checkbox-label get-offers-block__checkbox-label">Получать спецпредложения</label>
+                    </div>
+                </div>
+                <div class="card-button card-button_registration">
+                    <a href="" class="button button_purple card__button_purple">перейти к оплате<img class="card__button-arrow" src="assets/icons/arrow_forward.svg" alt=""></a>
+                </div>
+                <div class="card-footer">
+                    <span class="card-footer-text">Уже есть аккаунт на Toxin</span>
+                    <div class="button button_white card__button_white" id="cardEntrance">войти</div>  
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="card-wrapper card-wrapper_entrance card-wrapper_entrance_hidden">
+        <div class="card card_entrance">
+            <h2 class="card-title">Войти</h2>
+            <form class="card-form_entrance card-form">
+                <div class="card-content">
+                    <div class="entrance-block">
+                        <input class="input-field input-field_email" type="email" placeholder="Email">
+                        <input class="input-field input-field_password" type="password" placeholder="Пароль">
+                    </div>
+                </div>
+                <div class="card-button card-button_entrance">
+                    <a href="" class="button button_purple card__button_purple">войти<img class="card__button-arrow" src="assets/icons/arrow_forward.svg" alt=""></a>
+                </div>
+                <div class="card-footer">
+                    <span class="card-footer-text">Нет аккаунта на Toxin?</span>
+                    <div class="button button_white card__button_white" id="cardRegistration">создать</div>  
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="js/jquery.mask.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/swiper-bundle.min.js"></script>
+    <script src="js/search-room.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

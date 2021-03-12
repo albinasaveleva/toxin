@@ -5,28 +5,60 @@ a
     cursor: pointer
     &:hover
         opacity: 0.5
+    &:focus
+        opacity: 0.5
+img
+    height: inherit
+    width: inherit
+    object-fit: cover
 body
     margin: 0
 .container
     width: 1160px
     margin: auto
+summary::-webkit-details-marker 
+    display: none
+//Логотип
 .logo-wrapper
     width: 105.69px
     height: 40px
 .logo
     width: inherit
     height: inherit
-.nav-item
-    @include text_50
-    &-title
-        @include Heading_3
+//Навигация
+.nav
+    &-inner 
+        margin: 0
+        padding: 0
+        display: flex
+    &-item
+        @include text_50
+        &-title
+            @include Heading_3
+        &-wrapper 
+            list-style: none
+                
+                
+.submenu
+    &-item
+        @include text_50
+        &-wrapper
+            list-style: none
+            padding: 10px
+
+//Кнопки
 button
     outline: none
     cursor: pointer
-    opacity: 0.5
+    &:hover
+        opacity: 0.5
+    &:active
+        opacity: 0.5
+    &:focus
+        opacity: 0.5
 .button
     border-radius: 22px
-    padding: 10px 20px
+    padding: 10px 19px
     width: min-content
     outline: none
     text-align: center
@@ -34,9 +66,18 @@ button
     align-items: center
     justify-content: center
     cursor: pointer
+    &_without-border
+        border-radius: 0
+        border: none
+        &_purple
+            @include Heading_3
+            color: $Purple
+        &_grey
+            @include Heading_3
+            color: $Dark_50
+    
     &_white
         margin-top: 3px
-        margin-right: 23px
         background-color: $White
         @include Heading_3
         color: $Purple
@@ -58,7 +99,6 @@ button
         &:active
             &::before
                 opacity: 0.5    
-            
     &_purple
         background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%)
         @include Heading_3
@@ -68,83 +108,23 @@ button
             opacity: 0.5
         &:active
             opacity: 0.5
-.content-text
+    &_plus
+        width: 30px
+        height: 30px
+        border: 1px solid rgba(31, 32, 65, 0.25)
+        border-radius: 50%
+        color: $Dark_50
+        @include text-operation
+    &_minus
+        width: 30px
+        height: 30px
+        border: 1px solid rgba(31, 32, 65, 0.25)
+        border-radius: 50%
+        color: $Dark_50
+        @include text-operation
+.buttons-block
+    .button_without-border
+        padding: 0
+.text_content
     margin: 0
-.card
-    background: $White
-    border: 1px solid rgba(0, 0, 0, 0.12)
-    box-sizing: border-box
-    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2)
-    border-radius: 4px
-    padding: 40px 30px 30px
-    &__button_purple
-        width: 100%
-        position: relative
-        padding: 15px 18px
-    &__button-arrow
-        position: absolute
-        right: 18px
-        width: 16px
-        height: 16px
-        fill: $White
-    &_search
-        width: 380px
-.card-title
-    @include Heading_1
-    margin: 0
-    margin-bottom: 20px
-.dropdowns-block
-    display: flex
-    flex-direction: row
-    justify-content: space-between
-    align-items: center
-.dropdown
-    display: flex
-    flex-direction: column  
-.label-title    
-    @include Heading_3
-    margin-bottom: 5px
-input
-    cursor: text
-.input-field
-    padding: 0 0 0 15px
-    height: 44px
-    width: 320px
-    background: $White
-    border: 1px solid rgba(31, 32, 65, 0.25)
-    border-radius: 4px
-    @include text_card
-    outline: none
-    &_date
-        width: 150px
-    &:hover
-        border: 1px solid rgba(31, 32, 65, 0.5)
-        color: rgba(31, 32, 65, 0.75)
-    &:focus
-        border: 1px solid rgba(31, 32, 65, 0.5)
-        color: rgba(31, 32, 65, 0.75)
-input[type="date"]::-webkit-calendar-picker-indicator
-    background-image: url(../assets/icons/expand_more.svg)
-    padding-top: 5px
-    padding-right: 15px
-    width: 12px
-    height: 8px
-.select-block
-    display: flex
-    flex-direction: column
-.select-field
-    padding-left: 15px
-    width: 320px
-    height: 44px
-    background: $White
-    border: 1px solid rgba(31, 32, 65, 0.25)
-    border-radius: 4px
-    @include text_card
-    outline: none
-    &:active
-        border: 1px solid rgba(31, 32, 65, 0.5)
-.search-form
-    &__dropdowns-block
-        margin-bottom: 20px
-    &__select-block
-        margin-bottom: 30px
+

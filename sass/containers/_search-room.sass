@@ -1,0 +1,243 @@
+.search-room-page
+    &__container
+        padding: 30px 0 70px
+        display: flex
+        justify-content: space-between
+    &__rooms
+
+.filters
+    display: flex
+    flex-direction: column
+    width: 266px
+    margin-right: 60px
+.filter
+    &:not(:last-child)
+        margin-bottom: 30px
+
+.rooms
+    width: 834px
+    display: flex
+    flex-direction: column
+    &-content
+        display: flex
+        flex-wrap: wrap
+        column-gap: 12px
+        row-gap: 20.5px
+    &-title
+        @include Heading_1
+        margin: 0
+        margin-bottom: 20.5px
+.room
+    width: 270px
+    height: 257.5px
+    background: $White
+    box-shadow: 0px 10px 20px $Dark_5
+    border-radius: 4px  
+    overflow: hidden
+    &-image
+        height: 151px
+        width: 270px
+    &-description
+        padding: 19px
+        height: auto
+        &-top
+            display: flex
+            justify-content: space-between
+        &-bottom
+            display: flex
+            justify-content: space-between
+    &-divider
+        height: 1px
+        margin: 12px 0 8px
+        background-color: $Dark_10
+        border: none
+    &-number
+        @include text_50
+        color: $Dark_100
+        font-weight: bold
+        &-text 
+            font-size: 12px
+    &-cost
+        @include text-card
+        font-weight: bold
+        display: flex
+        align-items: flex-end
+        &-text
+            @include text-card
+            font-size: 12px
+    &-reviews
+        @include text-card
+        font-weight: bold
+        display: flex
+        align-items: flex-end
+        &-text
+            @include text-card
+    &__swiper-slide
+        width: 270px
+        height: 151.38px 
+    &__swiper-pagination
+        padding-bottom: 5px
+        padding-right: 15px
+        display: flex
+        justify-content: flex-end
+        & > .swiper-pagination-bullet
+            margin: 0
+            box-sizing: border-box
+            background-color: transparent
+            opacity: 1
+            border: 1px solid $White
+        & > .swiper-pagination-bullet-active
+            box-sizing: border-box
+            background-color: $White
+            box-shadow: 0px 5px 5px rgba(31, 32, 65, 0.3)
+            border: none
+    &__swiper-button-prev
+        position: absolute
+        left: 0
+        top: 50%
+        transform: translateY(-50%)
+        width: 44px
+        height: 44px
+        background-image: url(../assets/icons/btn-prev_light.svg)
+        background-repeat: no-repeat
+        background-position: center
+        z-index: 10
+        opacity: 1
+        &_visible
+            opacity: 1
+    &__swiper-button-next
+        position: absolute
+        right: 0
+        top: 50%
+        transform: translateY(-50%)
+        width: 44px
+        height: 44px
+        background-image: url(../assets/icons/btn-next_light.svg)
+        background-repeat: no-repeat
+        background-position: center center
+        z-index: 10
+        opacity: 1
+        &_visible
+            opacity: 1
+.filter-title
+    @include Heading_3
+    display: block
+    margin-bottom: 16px
+.range-block    
+    display: flex
+    justify-content: space-between
+    margin-bottom: 20px
+.range-label
+    @include Heading_3
+.range-input
+    max-width: 145px
+    border: none
+    @include text_50
+    font-size: 12px
+    line-height: 14px
+    text-align: right
+.ui-slider
+    position: relative
+    text-align: left
+    margin-bottom: 10px
+    &-horizontal
+        width: 100%
+        height: 6px
+        background: #FFFFFF
+        border: 1px solid $Dark_25
+        box-sizing: border-box
+        border-radius: 3px
+.ui-slider-range 
+    position: absolute
+    z-index: 1
+    display: block
+    border: 0
+    background-position: 0 0
+    height: 6px
+    top: -1px 
+    background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%)
+    border-radius: 3px
+    height: 6px
+.ui-slider-handle
+    position: absolute
+    top: -4px
+    z-index: 2
+    cursor: default
+    -ms-touch-action: none
+    touch-action: none
+    outline: none
+    width: 12px
+    height: 12px
+    background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%)
+    border: 2px solid #FFFFFF
+    border-radius: 10px
+    &:first-child
+    &:last-child
+        margin-left: -11.5px
+.filter-footer-text
+    @include text_50
+    font-size: 12px
+    line-height: 14px
+.filter
+    &__checkbox-field
+        width: 20px
+        height: 20px
+        opacity: 0
+        & + .filter__checkbox-label
+            &::before
+                box-sizing: border-box
+                content: ""
+                display: inline-block
+                position: absolute
+                left: -30px
+                width: 20px
+                height: 20px
+                z-index: 1
+                padding: 0
+                color: $Purple
+                border: 1px solid $Dark_25
+                border-radius: 4px
+        &:checked
+            opacity: 0 
+            & + .filter__checkbox-label
+                box-sizing: border-box
+                &::before
+                    content: "✓"
+                    display: flex
+                    align-items: center
+                    justify-content: center
+                    position: absolute
+                    left: -30px
+                    width: 20px
+                    height: 20px
+                    z-index: 1
+                    padding: 0
+                    color: $Purple
+                    border: 1px solid $Purple
+                    border-radius: 4px
+    &__checkbox-label
+        @include text-card
+        color: $Dark_50
+        position: relative
+        
+
+        &_bold
+            font-weight: 700
+            color: $Dark_75
+        &-description
+            @include text_50
+            font-size: 12px
+            line-height: 14px
+    &__filter-block-wrapper
+        display: flex
+        flex-direction: column
+    &__checkbox-label-description
+        margin-left: 30px
+        margin-top: -10px
+        margin-bottom: 10px
+.filter-block
+    display: flex
+    align-items: flex-start
+    justify-content: flex-start
+    &:not(:last-child)
+        margin-bottom: 10px
